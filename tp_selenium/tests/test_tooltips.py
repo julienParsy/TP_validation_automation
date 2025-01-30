@@ -1,4 +1,5 @@
 import pytest
+import time
 import logging
 import colorlog
 from selenium import webdriver
@@ -39,6 +40,7 @@ def browser():
     logger.info("Initializing the Chrome browser...")
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
     driver.maximize_window()
+    driver.execute_script("document.body.style.zoom='10%'")
     driver.implicitly_wait(10)
     yield driver
     logger.info("Closing the browser.")
@@ -59,6 +61,7 @@ def navigate_to_tooltip_page(browser):
     logger.info("Navigating to the tooltip test page...")
     try:
         browser.get(URL_TOOLTIP)
+        time.sleep(2)
         WebDriverWait(browser, 10).until(
             EC.visibility_of_element_located((By.ID, "toolTipButton"))
         )
