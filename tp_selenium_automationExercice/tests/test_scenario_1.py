@@ -1,17 +1,16 @@
+import colorlog
+import logging
 import pytest
+import random
+import string
+from pytest_bdd import scenario, given, when, then
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
-import logging
-import colorlog
 from webdriver_manager.chrome import ChromeDriverManager
-from pytest_bdd import scenario, given, when, then
-import time
-import random
-import string
 
 
 # Configuration du logger
@@ -36,20 +35,18 @@ logger.addHandler(handler)
 URL = "http://automationexercise.com"
 
 def generate_random_email():
-    """Generate a random email address."""
     random_string = ''.join(random.choices(string.ascii_lowercase + string.digits, k=10))
     return f"{random_string}@example.com"
 
 @pytest.fixture(scope="function")
 def browser():
-    """Fixture for initializing and closing the browser."""
     logger.info("Setting up the browser fixture...")
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
     driver.maximize_window()
-    driver.implicitly_wait(10)
     yield driver
     logger.info("Tearing down the browser fixture...")
     driver.quit()
+
 
 @scenario('features/scenario_1.feature', 'User successfully places an order')
 def test_place_order():
@@ -57,14 +54,12 @@ def test_place_order():
 
 @given('I navigate to the AutomationExercise website')
 def navigate_to_website(browser):
-    """Navigate to AutomationExercise website."""
     logger.info("Navigating to the AutomationExercise website...")
     browser.get(URL)
     browser.find_element(By.XPATH, "//p[.='Autoriser']").click()
 
 @when('I add products to the cart')
 def add_products_to_cart(browser):
-    """Add products to the cart."""
     logger.info("Adding products to the cart...")
     WebDriverWait(browser, 10).until(
         EC.element_to_be_clickable((By.CSS_SELECTOR, "a[href='/product_details/1']"))
@@ -78,7 +73,6 @@ def add_products_to_cart(browser):
 
 @then('I proceed to checkout and sign up')
 def proceed_and_sign_up(browser):
-    """Proceed to checkout and sign up."""
     logger.info("Proceeding to checkout and signing up...")
     WebDriverWait(browser, 10).until(
         EC.element_to_be_clickable((By.XPATH, "//a[.='Proceed To Checkout']"))
@@ -147,17 +141,13 @@ def proceed_and_sign_up(browser):
 
 @then('the message ACCOUNT CREATED! should be visible')
 def verify_account_created(browser):
-    """Verify that the "ACCOUNT CREATED!" message is visible."""
     assert "Account Created!" in browser.page_source
-    time.sleep(1)
-
-    browser.find_element(By.CLASS_NAME, 'btn.btn-primary').click()
-    time.sleep(1)
-
+    WebDriverWait(browser, 10).until(
+        EC.element_to_be_clickable((By.CLASS_NAME, 'btn.btn-primary'))
+    ).click()
 
 @then('I complete the order with valid payment information')
 def complete_order(browser):
-    """Complete the order with valid payment information."""
     logger.info("Completing the order with valid payment information...")
     browser.find_element(By.CSS_SELECTOR, "ul.nav.navbar-nav a[href='/view_cart']").click()
     WebDriverWait(browser, 10).until(
@@ -180,27 +170,21 @@ def complete_order(browser):
         By.CSS_SELECTOR, "input[name='expiry_year']").send_keys("2025")
     browser.find_element(
         By.CSS_SELECTOR, "button[data-qa='pay-button']").click()
-    time.sleep(5)
-
 
 @then('the message "Congratulations! Your order has been confirmed!" should be visible')
 def verify_order_confirmation(browser):
-    """Verify that the order confirmation message is visible."""
     logger.info('Verifying the order confirmation message...')
     WebDriverWait(browser, 10).until(
         EC.visibility_of_element_located(
             (By.XPATH, "//p[text()='Congratulations! Your order has been confirmed!']"))
     )
 
-
 @when('I click on "Download Invoice"')
 def download_invoice(browser):
-    """Click on the "Download Invoice" button."""
     logger.info('Clicking on "Download Invoice"...')
     browser.find_element(By.XPATH, f"//a[.='Download Invoice']").click()
 
 @then('the invoice should be downloaded successfully')
 def verify_invoice_download(browser):
-    """Verify that the invoice is downloaded successfully."""
     logger.info("Success !")
 
