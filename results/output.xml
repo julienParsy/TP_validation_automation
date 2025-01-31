@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2 (Python 3.13.1 on win32)" generated="2025-01-31T16:54:17.910769" rpa="false" schemaversion="5">
+<suite id="s1" name="TP validation automation" source="C:\Users\Administrateur\Desktop\TP_validation_automation">
+<suite id="s1-s1" name="tp robotframework AE" source="C:\Users\Administrateur\Desktop\TP_validation_automation\tp_robotframework_AE">
+<suite id="s1-s1-s1" name="AE project" source="C:\Users\Administrateur\Desktop\TP_validation_automation\tp_robotframework_AE\AE_project">
+<suite id="s1-s1-s1-s1" name="Tests" source="C:\Users\Administrateur\Desktop\TP_validation_automation\tp_robotframework_AE\AE_project\tests">
+<suite id="s1-s1-s1-s1-s1" name="Test Scenario 3" source="C:\Users\Administrateur\Desktop\TP_validation_automation\tp_robotframework_AE\AE_project\tests\test_scenario_3.robot">
+<test id="s1-s1-s1-s1-s1-t1" name="Register, Shop, Checkout, and Delete Account" line="20">
+<kw name="Given The User Navigates To Website" owner="keyword">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-01-31T16:54:18.433010" level="INFO">Ouvrir le navigateur avec l'url https://automationexercise.com et le browser chrome</msg>
+<arg>Ouvrir le navigateur avec l'url ${url} et le browser ${browser}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-01-31T16:54:18.432760" elapsed="0.000382"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-01-31T16:54:18.433547" level="INFO">Opening browser 'chrome' to base url 'https://automationexercise.com'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-01-31T16:54:18.433301" elapsed="2.764994"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-01-31T16:54:21.198786" level="INFO">Maximiser la taille de la fenêtre</msg>
+<arg>Maximiser la taille de la fenêtre</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-01-31T16:54:21.198531" elapsed="0.000415"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-01-31T16:54:21.199068" elapsed="0.030582"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-01-31T16:54:21.230140" level="INFO">Supprimer les cookies</msg>
+<arg>Supprimer les cookies</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-01-31T16:54:21.229856" elapsed="0.000430"/>
+</kw>
+<kw name="Click Element If Visible" owner="library">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-31T16:54:21.230971" elapsed="0.030705"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-01-31T16:54:21.262267" level="INFO">Clicking on xpath=//p[.='Autoriser']</msg>
+<arg>Clicking on ${locator}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-01-31T16:54:21.261968" elapsed="0.000443"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-31T16:54:21.262883" level="INFO">Clicking element 'xpath=//p[.='Autoriser']'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-31T16:54:21.262530" elapsed="0.107682"/>
+</kw>
+<arg>${accept_cookies}</arg>
+<doc>This keyword clicks an element</doc>
+<status status="PASS" start="2025-01-31T16:54:21.230481" elapsed="0.140023"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-01-31T16:54:21.371018" level="INFO">Vérifier si le logo est visible</msg>
+<arg>Vérifier si le logo est visible</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-01-31T16:54:21.370720" elapsed="0.000519"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${logo}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-31T16:54:21.371408" elapsed="0.023829"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-01-31T16:54:21.395721" level="INFO">La page d'accueil est visible</msg>
+<arg>La page d'accueil est visible</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-01-31T16:54:21.395460" elapsed="0.000487"/>
+</kw>
+<doc>Navigating to the website</doc>
+<status status="PASS" start="2025-01-31T16:54:18.429973" elapsed="2.966086"/>
+</kw>
+<kw name="When The User Clicks On The &quot;Signup/Login&quot; Button" owner="keyword">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-01-31T16:54:21.398885" level="INFO">Cliquer sur le bouton "Signup/Login"</msg>
+<arg>Cliquer sur le bouton "Signup/Login"</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-01-31T16:54:21.398687" elapsed="0.000347"/>
+</kw>
+<kw name="Click Element If Visible" owner="library">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-31T16:54:21.399507" elapsed="0.015319"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-01-31T16:54:21.415322" level="INFO">Clicking on //a[contains(.,'Signup / Login')]</msg>
+<arg>Clicking on ${locator}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-01-31T16:54:21.415022" elapsed="0.000433"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-31T16:54:21.415851" level="INFO">Clicking element '//a[contains(.,'Signup / Login')]'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-31T16:54:21.415583" elapsed="1.257095"/>
+</kw>
+<arg>${signup_login_button}</arg>
+<doc>This keyword clicks an element</doc>
+<status status="PASS" start="2025-01-31T16:54:21.399205" elapsed="1.273630"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-01-31T16:54:22.673217" level="INFO">Bouton "Signup/Login" cliqué</msg>
+<arg>Bouton "Signup/Login" cliqué</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-01-31T16:54:22.672975" elapsed="0.000385"/>
+</kw>
+<doc>Clicking on the "Signup/Login" button</doc>
+<status status="PASS" start="2025-01-31T16:54:21.398375" elapsed="1.275083"/>
+</kw>
+<kw name="Then The User Fills In All The Registration Details And Creates An Account" owner="keyword">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-01-31T16:54:22.675460" level="INFO">Remplir tous les champs de registration</msg>
+<arg>Remplir tous les champs de registration</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-01-31T16:54:22.675225" elapsed="0.000368"/>
+</kw>
+<kw name="Click Element If Visible" owner="library">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-31T16:54:22.676077" elapsed="0.014695"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-01-31T16:54:22.691311" level="INFO">Clicking on //a[contains(.,'Signup / Login')]</msg>
+<arg>Clicking on ${locator}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-01-31T16:54:22.690995" elapsed="0.000505"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-31T16:54:22.692048" level="INFO">Clicking element '//a[contains(.,'Signup / Login')]'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-31T16:54:22.691704" elapsed="1.039946"/>
+</kw>
+<arg>${signup_login_button}</arg>
+<doc>This keyword clicks an element</doc>
+<status status="PASS" start="2025-01-31T16:54:22.675736" elapsed="1.056077"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-01-31T16:54:23.732415" level="INFO">Bouton "Signup/Login" cliquée</msg>
+<arg>Bouton "Signup/Login" cliquée</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-01-31T16:54:23.732103" elapsed="0.000722"/>
+</kw>
+<kw name="Click Element If Visible" owner="library">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-31T16:54:23.734023" elapsed="0.075194"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-01-31T16:54:23.809771" level="INFO">Clicking on //input[@data-qa='signup-name']</msg>
+<arg>Clicking on ${locator}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-01-31T16:54:23.809435" elapsed="0.000506"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-31T16:54:23.810467" level="INFO">Clicking element '//input[@data-qa='signup-name']'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-31T16:54:23.810069" elapsed="0.064172"/>
+</kw>
+<arg>${signup_button}</arg>
+<doc>This keyword clicks an element</doc>
+<status status="PASS" start="2025-01-31T16:54:23.733115" elapsed="0.141355"/>
+</kw>
+<kw name="Enter Text" owner="library">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-01-31T16:54:23.875313" level="INFO">Typing text 'Julien' into text field '//input[@data-qa='signup-name']'.</msg>
+<arg>${locator}</arg>
+<arg>${value}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-31T16:54:23.875055" elapsed="0.075855"/>
+</kw>
+<arg>${NAME_INPUT}</arg>
+<arg>Julien</arg>
+<doc>This keyword fills a text field</doc>
+<status status="PASS" start="2025-01-31T16:54:23.874667" elapsed="0.076632"/>
+</kw>
+<kw name="Fill Email Field With Random Email" owner="library">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-01-31T16:54:23.952513" level="INFO">${random_number} = 1662</msg>
+<var>${random_number}</var>
+<arg>random.randint(1000, 9999)</arg>
+<arg>modules=random</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-01-31T16:54:23.952073" elapsed="0.000761"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-01-31T16:54:23.953615" level="INFO">${random_email} = user_1662@example.com</msg>
+<var>${random_email}</var>
+<arg>user_${random_number}@example.com</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-01-31T16:54:23.953073" elapsed="0.000690"/>
+</kw>
+<kw name="Enter Text" owner="library">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-01-31T16:54:23.954685" level="INFO">Typing text 'user_1662@example.com' into text field '//input[@data-qa='signup-email']'.</msg>
+<arg>${locator}</arg>
+<arg>${value}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-31T16:54:23.954356" elapsed="0.111517"/>
+</kw>
+<arg>${locator}</arg>
+<arg>${random_email}</arg>
+<doc>This keyword fills a text field</doc>
+<status status="PASS" start="2025-01-31T16:54:23.953949" elapsed="0.112069"/>
+</kw>
+<arg>${EMAIL_INPUT}</arg>
+<status status="PASS" start="2025-01-31T16:54:23.951586" elapsed="0.114511"/>
+</kw>
+<doc>Filling in all the registration details and creating an account</doc>
+<status status="PASS" start="2025-01-31T16:54:22.673737" elapsed="1.392428"/>
+</kw>
+<kw name="Then The Message &quot;ACCOUNT CREATED!&quot; Should Be Displayed" owner="keyword">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-01-31T16:54:24.069970" level="INFO">Vérifier si le message "ACCOUNT CREATED!" est affiché</msg>
+<arg>Vérifier si le message "ACCOUNT CREATED!" est affiché</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-01-31T16:54:24.069771" elapsed="0.000388"/>
+</kw>
+<doc>Verifying the message "ACCOUNT CREATED!" is displayed</doc>
+<status status="PASS" start="2025-01-31T16:54:24.068073" elapsed="0.002182"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-01-31T16:54:29.072390" level="INFO">Slept 5 seconds.</msg>
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-01-31T16:54:24.071605" elapsed="5.001385"/>
+</kw>
+<doc>Register, Shop, Checkout, and Delete Account</doc>
+<status status="PASS" start="2025-01-31T16:54:18.428787" elapsed="10.645158"/>
+</test>
+<kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2025-01-31T16:54:29.077245" elapsed="6.187216"/>
+</kw>
+<doc>This is the documentation for the suite.</doc>
+<status status="PASS" start="2025-01-31T16:54:17.938862" elapsed="17.326047"/>
+</suite>
+<status status="PASS" start="2025-01-31T16:54:17.936541" elapsed="17.333406"/>
+</suite>
+<status status="PASS" start="2025-01-31T16:54:17.934668" elapsed="17.338773"/>
+</suite>
+<status status="PASS" start="2025-01-31T16:54:17.930923" elapsed="17.344799"/>
+</suite>
+<status status="PASS" start="2025-01-31T16:54:17.913782" elapsed="17.363617"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="TP validation automation" id="s1" pass="1" fail="0" skip="0">TP validation automation</stat>
+<stat name="tp robotframework AE" id="s1-s1" pass="1" fail="0" skip="0">TP validation automation.tp robotframework AE</stat>
+<stat name="AE project" id="s1-s1-s1" pass="1" fail="0" skip="0">TP validation automation.tp robotframework AE.AE project</stat>
+<stat name="Tests" id="s1-s1-s1-s1" pass="1" fail="0" skip="0">TP validation automation.tp robotframework AE.AE project.Tests</stat>
+<stat name="Test Scenario 3" id="s1-s1-s1-s1-s1" pass="1" fail="0" skip="0">TP validation automation.tp robotframework AE.AE project.Tests.Test Scenario 3</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

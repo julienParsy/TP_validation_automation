@@ -1,6 +1,10 @@
 # TP de validation automatisation
 
-## Lancement du test
+## Préambule
+
+## SELENIUM
+
+### Lancement du test
 
 Pour lancer le test:
 
@@ -14,17 +18,25 @@ Pour lancer le test avec le logger:
 pytest tests/test_name.py -o log_cli=true --log-cli-level=INFO``
 ```
 
-## prérequis
+### Prérequis pour Selenium
+
+Pour installer Python, utilisez :
 
 👉 <https://www.python.org/downloads/>
 
-Vérifier l'installation
-Une fois l'installation terminée, ferme PowerShell et rouvre-le.
+Une fois l'installation terminée, ferme le terminal et rouvre un nouveau.
+
 Teste Python avec :
 
 ```POWERSHELL
 python --version
 pip --version
+```
+
+Pour updater Python et pip, utilisez :
+
+```POWERSHELL
+python.exe -m pip install --upgrade pip
 ```
 
 Si Python est bien installé, installe pytest et Selenium avec :
@@ -79,3 +91,18 @@ Pour installer et utiliser la dernière version de ChromeDriver, voici les étap
 ```bash
         chromedriver --version
 ```
+
+## ROBOTFRAMEWORK
+
+### Prérequis pour RobotFramework
+
+Pour installer RobotFramework, utilisez :
+
+````Powershell
+pip install robotframework
+pip install robotframework-browser
+pip install robotframework-robocop
+rfbrowser init --with-deps chromium
+pip install robotframework-seleniumlibrary
+pip install robotframework-faker
+````
