@@ -168,8 +168,6 @@ Lancez le serveur Appium en local avec :
 appium
 ```
 
-Ou utilisez Appium Desktop ([Téléchargement ici](https://github.com/appium/appium-desktop/releases)) si vous préférez une interface graphique.
-
 ### Initialisation d'un projet Appium  
 
 Créez la structure de base de votre projet :  
