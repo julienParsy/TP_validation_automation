@@ -2,6 +2,16 @@
 
 ## Préambule
 
+Ce projet a été réalisé dans le cadre de la validation de ma formation de Testeur Logiciel. Il regroupe plusieurs travaux pratiques (TP) mettant en œuvre différents outils et technologies utilisés dans l'automatisation des tests.
+
+Les exercices couvrent plusieurs frameworks et bibliothèques, notamment :
+
+- **Selenium :** Automatisation des tests web
+- **Robot Framework :** Framework de test générique extensible
+- **Appium :** Tests d’applications mobiles
+
+Ce projet met en pratique des cas concrets d’automatisation de tests.
+
 ## SELENIUM
 
 ### Lancement du test
@@ -106,3 +116,72 @@ rfbrowser init --with-deps chromium
 pip install robotframework-seleniumlibrary
 pip install robotframework-faker
 ````
+Voici l'ajout de l'initialisation d'un projet **Appium** dans ton README :  
+
+---
+
+## APPIUM
+
+### Prérequis pour Appium  
+
+Avant d'installer Appium, assurez-vous d'avoir :  
+
+- **Node.js** installé ([Téléchargement ici](https://nodejs.org/))  
+- **Java JDK** installé ([Téléchargement ici](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html))  
+- **Android SDK** installé ([Téléchargement ici](https://developer.android.com/studio))  
+- Ajout des variables d'environnement pour Java et Android SDK  
+
+Vérifiez les installations avec :  
+
+```bash
+node -v
+npm -v
+java -version
+adb version
+```
+
+### Installation d'Appium  
+
+Installez Appium via **npm** :  
+
+```bash
+npm install -g appium
+```
+
+Vérifiez l'installation avec :  
+
+```bash
+appium -v
+```
+
+Installez le client Appium pour Python :  
+
+```bash
+pip install Appium-Python-Client
+```
+
+### Lancement du serveur Appium  
+
+Lancez le serveur Appium en local avec :  
+
+```bash
+appium
+```
+
+Ou utilisez Appium Desktop ([Téléchargement ici](https://github.com/appium/appium-desktop/releases)) si vous préférez une interface graphique.
+
+### Initialisation d'un projet Appium  
+
+Créez la structure de base de votre projet :  
+
+```bash
+mkdir appium-tests
+cd appium-tests
+pip install Appium-Python-Client pytest
+```
+
+Lancez votre test avec :  
+
+```bash
+pytest test_appium.py
+```
